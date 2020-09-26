@@ -8,7 +8,119 @@
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <title>Home</title>
 </head>
-<body>
-    
+<body class="bg-light">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/ead.png" style="width: 150px;">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="product.html">Products</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- end Navbar -->
+
+        <!-- content -->
+        <div class="container mt-4 mx-auto px-5">
+            <div class="row mx-auto px-5">
+                <!-- video -->
+                <div class="col-lg video" style="background-color: #ebeced;align-items: center; padding-top: 117px;">
+                    <iframe width="425" height="260" src="http://bit.ly/VideoEAD2020" allowfullscreen></iframe>
+                </div>
+                <!-- end video -->
+                <!-- regis -->
+                <div class="col-lg px-5 bg-white">
+                    <form>
+                        <!-- row 1 -->
+                        <div class="row mt-5">
+                            <div class="col" style="font-size: 20px;text-align: center;font-weight: bold;">
+                                <p>Registrasi Data Pelanggan</p>
+                            </div>
+                        </div>
+                        <!-- end row 1 -->
+                        <!-- row 2 -->
+                        <div class="row px-4 mb-4">
+                            <div class="col">
+                                <label>Nama</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="name" name="name" placeholder="Nama anda...">
+                            </div>
+                        </div>
+                        <!-- end row 2 -->
+                        <!-- row 3 -->
+                        <div class="row px-4 mb-4">
+                            <div class="col">
+                                <label>NomorHP</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" name="phone" id="phone">
+                            </div>
+                        </div>
+                        <!-- end row 3 -->
+                        <!-- row 4 -->
+                        <div class="row px-4 mb-4">
+                            <div class="col">
+                                <label>Alamat</label>
+                            </div>
+                            <div class="col">
+                                <textarea id="alamat" name="alamat" style="width: 182px;"></textarea>
+                            </div>
+                        </div>
+                        <!-- end row 4 -->
+                        <!-- row 5 -->
+                        <div class="row px-4 mb-4">
+                            <div class="col">
+                                <label>Pembayaran</label>
+                            </div>
+                            <div class="col" style="margin-right: 22px;">
+                                <div class="row">
+                                    <div class="radio" style="margin-right: 12px;">
+                                        <label><input type="radio" name="optradio">Cash</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Credit</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row 5 -->
+                        <!-- row 6 -->
+                        <div class="row px-4 mb-4">
+                            <div class="col">
+                                <label>Kategori Pesanan</label>
+                            </div>
+                            <div class="col">
+                                <select id="pesanan" style="width: 182px;">
+                                    <option value="komputer">Komputer</option>
+                                    <option value="keyboard">Keyboard</option>
+                                    <option value="mouse">Mouse</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- end row 6 -->
+                        <!-- row 7 -->
+                        <div class="row px-4 mb-5">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary w-100">Primary</button>
+                            </div>
+                        </div>
+                        <!-- end row 7 -->
+                    </form>
+                </div>
+                <!-- end regis -->
+            </div>
+        </div>
+        <!-- end content -->
 </body>
 </html>
