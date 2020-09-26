@@ -1,7 +1,13 @@
 # WAD-JODY-1202180092
+<!-- DAFTAR ISI -->
+<h2>Daftar Isi : </h2>
+<ol>
+  <li><a href="#modul1">Modul 1</a></li>
+</ol>
+<!-- End of DAFTAR ISI -->
 
 <!-- MODUL 1 -->
-<h2>TP Modul 1 Praktikum WAD</h2>
+<h2 id="modul1">TP Modul 1 Praktikum WAD</h2>
 <p>Quick preview<br>
 [M1]Study Kasus - HTML dan CSS dengan Bootstrap
 <ol>
