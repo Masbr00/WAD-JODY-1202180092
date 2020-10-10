@@ -91,6 +91,6 @@
             <!-- end of room luxury -->
         </div>
     </div>
-        <!-- end content -->
+    <!-- end content -->
 </body>
 </html>
