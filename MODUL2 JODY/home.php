@@ -8,7 +8,20 @@
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <title>Home</title>
 </head>
-<body>
-    
+<body class="bg-white">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="booking.php">Booking</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- end Navbar -->
 </body>
 </html>
