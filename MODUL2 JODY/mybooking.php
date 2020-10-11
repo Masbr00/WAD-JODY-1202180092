@@ -23,5 +23,24 @@
         </div>
     </nav>
     <!-- end Navbar -->
+    <!-- content -->
+    <div class="container mt-2 mx-auto">
+        <div>
+            <table class="mx-auto table" style="border-collapse:collapse;">
+                <tr class="bg-light" style="border-bottom: 1px">
+                    <th>Booking Number</th>
+                    <th>Name</th>
+                    <th>Check-In</th>
+                    <th>Check-Out</th>
+                    <th>Room Type</th>
+                    <th>Phone Number</th>
+                    <th>Service</th>
+                    <th>Total Price</th>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+    <!-- end of content -->
 </body>
 </html>
