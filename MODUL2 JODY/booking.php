@@ -27,7 +27,7 @@
     <div class="container mt-2 mx-auto">
         <div class="row mx-auto mt-5">
             <!-- formulir -->
-            <div class="col" style="background-color:blue;">
+            <div class="col">
                 <div class="card mx-auto shadow" style="width: 21rem;">
                     <div class="card-body">
                         <div class="card-text">
@@ -90,8 +90,8 @@
             </div>
             <!-- end of formulir -->
             <!-- room img -->
-            <div class="col" style="background-color:green;">
-                
+            <div class="col">
+                <img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:92%;height=auto;">
             </div>
             <!-- end of room img -->
         </div>
