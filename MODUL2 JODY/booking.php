@@ -9,6 +9,21 @@
     <title>Booking</title>
 </head>
 <body class="bg-white">
+    <!-- php -->
+    <?php
+        $kamar = NULL;
+        if(isset($_POST['standart'])) { 
+            $kamar = 'standart';
+        } 
+        if(isset($_POST['superior'])) { 
+            $kamar = "superior";
+        }
+        if(isset($_POST['luxury'])) { 
+            $kamar = "luxury";
+        }
+    ?>
+    <!-- end of php -->
+    
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
@@ -55,11 +70,36 @@
                             <!-- kamar -->
                             <div class="form-group">
                                 <label for="room_type">Room Type</label>
-                                <select class="custom-select custom-select-lg" id="room_type" name="room_type">
-                                    <option value="Standart">Standart</option>
-                                    <option value="Superior">Superior</option>
-                                    <option value="Luxury">Luxury</option>
-                                </select>
+                                <?php
+                                if(isset($_POST['standart'])) { 
+                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type">';
+                                    echo '<option value="Standart">Standart</option>';
+                                    echo '<option value="Superior">Superior</option>';
+                                    echo '<option value="Luxury">Luxury</option>';
+                                    echo '</select>';
+                                } 
+                                else if(isset($_POST['superior'])) { 
+                                    echo '<select disable class="custom-select custom-select-lg" id="room_type" name="room_type">';
+                                    echo '<option value="Superior">Superior</option>';
+                                    echo '<option value="Standart">Standart</option>';
+                                    echo '<option value="Luxury">Luxury</option>';
+                                    echo '</select>';
+                                }
+                                else if(isset($_POST['luxury'])) { 
+                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type">';
+                                    echo '<option value="Luxury">Luxury</option>';
+                                    echo '<option value="Standart">Standart</option>';
+                                    echo '<option value="Superior">Superior</option>';
+                                    echo '</select>';
+                                }
+                                else {
+                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type">';
+                                    echo '<option value="Standart">Standart</option>';
+                                    echo '<option value="Superior">Superior</option>';
+                                    echo '<option value="Luxury">Luxury</option>';
+                                    echo '</select>';
+                                }
+                                ?>
                             </div>
                             <!-- end of kamar -->
                             <!-- servis -->
