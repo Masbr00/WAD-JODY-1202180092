@@ -30,7 +30,7 @@
 <!-- MODUL 2 -->
 <h2 id="modul2">TP Modul 2 Praktikum WAD</h2>
 <p>Quick preview<br>
-  [M1]Study Kasus - PHP Dasar<br>
+  [M2]Study Kasus - PHP Dasar<br>
   Silahkan buka link dibawah ini dengan klik kanan dan buka ditab baru (Open in new tab)<br>
 <ol>
   <li><b>Home.php Page<br>
