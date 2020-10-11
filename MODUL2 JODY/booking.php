@@ -72,21 +72,21 @@
                                 <label for="room_type">Room Type</label>
                                 <?php
                                 if(isset($_POST['standart'])) { 
-                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type">';
+                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type" disabled>';
                                     echo '<option value="Standart">Standart</option>';
                                     echo '<option value="Superior">Superior</option>';
                                     echo '<option value="Luxury">Luxury</option>';
                                     echo '</select>';
                                 } 
                                 else if(isset($_POST['superior'])) { 
-                                    echo '<select disable class="custom-select custom-select-lg" id="room_type" name="room_type">';
+                                    echo '<select disable class="custom-select custom-select-lg" id="room_type" name="room_type" disabled>';
                                     echo '<option value="Superior">Superior</option>';
                                     echo '<option value="Standart">Standart</option>';
                                     echo '<option value="Luxury">Luxury</option>';
                                     echo '</select>';
                                 }
                                 else if(isset($_POST['luxury'])) { 
-                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type">';
+                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type" disabled>';
                                     echo '<option value="Luxury">Luxury</option>';
                                     echo '<option value="Standart">Standart</option>';
                                     echo '<option value="Superior">Superior</option>';
