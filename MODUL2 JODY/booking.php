@@ -9,21 +9,6 @@
     <title>Booking</title>
 </head>
 <body class="bg-white">
-    <!-- php -->
-    <?php
-        $kamar = NULL;
-        if(isset($_POST['standart'])) { 
-            $kamar = 'standart';
-        } 
-        if(isset($_POST['superior'])) { 
-            $kamar = "superior";
-        }
-        if(isset($_POST['luxury'])) { 
-            $kamar = "luxury";
-        }
-    ?>
-    <!-- end of php -->
-    
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
@@ -74,12 +59,11 @@
                                     if (isset($_POST['tombol'])) {
                                         $tombol = $_POST['tombol'];
                                     }
-
                                     if (!empty($tombol)) {
-                                        echo '<input type="text" class="form-control" id="room"  readonly value='.$tombol.'>';
+                                        echo '<input type="text" class="form-control" id="room" name="kamar" readonly value='.$tombol.'>';
                                     }else {
-                                        echo '<select class="form-control" id="room_type" name="room_type">';
-                                        echo '<option value="Standart">Standart</option>';
+                                        echo '<select class="form-control" id="room_type" name="kamar">';
+                                        echo '<option value="Standard">Standard</option>';
                                         echo '<option value="Superior">Superior</option>';
                                         echo '<option value="Luxury">Luxury</option>';
                                         echo '</select>';

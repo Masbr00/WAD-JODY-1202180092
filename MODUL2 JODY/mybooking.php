@@ -9,13 +9,6 @@
     <title>My Booking</title>
 </head>
 <body class="bg-white">
-    <?php
-        $nama = $_POST['name'];
-        $cekin = $_POST['check-in'];
-        $durasi = $_POST['duration'];
-        $tipekamar = $_POST['room_type'];
-        $telpon = $_POST['phone'];
-    ?>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
@@ -31,9 +24,11 @@
     </nav>
     <!-- end Navbar -->
     <!-- content -->
-    <div class="container mt-2 mx-auto">
+    <div class="container mt-5 mx-auto">
         <div>
+            <!-- table -->
             <table class="mx-auto table" style="border-collapse:collapse;text-align:left;">
+                <!-- header -->
                 <tr class="bg-light" style="border-bottom: 1px">
                     <th>Booking Number</th>
                     <th>Name</th>
@@ -44,13 +39,90 @@
                     <th>Service</th>
                     <th>Total Price</th>
                 </tr>
+                <!-- end of header -->
+                <!-- row -->
                 <tr>
+                    <!-- random number -->
                     <td><?= rand(100000,999999) ?></td>
-                    <td><?= $nama ?></td>
-                    <td><?= date('d-m-Y', strtotime($cekin)) ?></td>
-                    <td><?= date($cekin) ?></td>
-                    <td><?= $tipekamar ?></td>
-                    <td><?= $telpon ?></td>
+                    <!-- end of random number -->
+
+                    <!-- name -->
+                    <td>
+                        <?php
+                            if (isset($_POST['name'])) {
+                                $name = $_POST['name'];
+                            }
+                            if (!empty($name)) {
+                                echo $name;
+                            }else {
+                                echo 'No Name';
+                            }
+                        ?>
+                    </td>
+                    <!-- end of name -->
+
+                    <!-- cek in -->
+                    <td>
+                        <?php
+                            if (isset($_POST['check-in'])) {
+                                $checkin = $_POST['check-in'];
+                            }
+                            if (!empty($checkin)) {
+                                echo date('d/m/Y', strtotime($checkin));
+                            }else {
+                                echo 'No Date';
+                            }
+                        ?>
+                    </td>
+                    <!-- end of cek in -->
+
+                    <!-- cek out -->
+                    <td>
+                        <?php
+                            //hitung lama durasi
+                            if (isset($_POST['duration'])) {
+                                $duration = $_POST['duration'];
+                            }
+                            //
+                            // menambahkan tanggal
+                            $tglskrg = $checkin;
+                            $checkout =  date('d/m/Y', strtotime($tglskrg . ' + ' . $duration . 'days'));
+                            echo $checkout;
+                        ?>
+                    </td>
+                    <!-- end of cek out -->
+
+                    <!-- tipe kamar -->
+                    <td>
+                        <?php
+                            if (isset($_POST['kamar'])) {
+                                $kamar = $_POST['kamar'];
+                            }
+                            if (!empty($kamar)) {
+                                echo $kamar;
+                            }else {
+                                echo 'No Room';
+                            }
+                        ?>
+                    </td>
+                    <!-- end of tipe kamar -->
+
+                    <!-- telpon -->
+                    <td>
+                        <?php
+                            if (isset($_POST['phone'])) {
+                                $phone = $_POST['phone'];
+                            }
+                            if (!empty($phone)) {
+                                echo $phone;
+                            }else {
+                                echo 'No Phone Number';
+                            }
+                        ?>
+                    </td>
+                    <!-- end of telpon -->
+
+                    <!-- service -->
                     <td>
                         <?php
                             if (isset($_POST['service'])) {
@@ -67,11 +139,49 @@
                             }
                         ?>
                     </td>
+                    <!-- end of service -->
+
+                    <!-- total price -->
                     <td>
+                        <?php
+                            // hitung banyak servis
+                            $totalservice = 0;
+                            if (!empty($service)) {
+                                for ($i=0; $i < count($service); $i++) {
+                                    $totalservice++;
+                                }
+                            }else {
+                                $totalservice = 0;
+                            }
+                            //
+                            // hitung total harga
+                            $totalharga = 0;
+                            switch ($kamar) {
+                                case 'Standard':
+                                    $totalharga = (90*$duration)+($totalservice*20);
+                                    echo $totalharga;
+                                    break;
+
+                                case 'Superior':
+                                    $totalharga = (150*$duration)+($totalservice*20);
+                                    echo $totalharga;
+                                    break;
+
+                                case 'Luxury':
+                                    $totalharga = (200*$duration)+($totalservice*20);
+                                    echo $totalharga;
+                                    break;
+                                default:
+                                    echo 'No price tag';
+                                    break;
+                            }
+                        ?>
                     </td>
+                    <!-- end of total price -->
                 </tr>
-                
+                <!-- end of row -->
             </table>
+            <!-- end of table -->
         </div>
     </div>
     <!-- end of content -->
