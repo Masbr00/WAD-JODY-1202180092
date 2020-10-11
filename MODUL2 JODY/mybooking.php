@@ -9,9 +9,14 @@
     <title>My Booking</title>
 </head>
 <body class="bg-white">
-    <!-- navbar -->
     <?php
+        $nama = $_POST['name'];
+        $cekin = $_POST['check-in'];
+        $durasi = $_POST['duration'];
+        $tipekamar = $_POST['room_type'];
+        $telpon = $_POST['phone'];
     ?>
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
@@ -28,7 +33,7 @@
     <!-- content -->
     <div class="container mt-2 mx-auto">
         <div>
-            <table class="mx-auto table" style="border-collapse:collapse;">
+            <table class="mx-auto table" style="border-collapse:collapse;text-align:left;">
                 <tr class="bg-light" style="border-bottom: 1px">
                     <th>Booking Number</th>
                     <th>Name</th>
@@ -38,6 +43,32 @@
                     <th>Phone Number</th>
                     <th>Service</th>
                     <th>Total Price</th>
+                </tr>
+                <tr>
+                    <td><?= rand(100000,999999) ?></td>
+                    <td><?= $nama ?></td>
+                    <td><?= date('d-m-Y', strtotime($cekin)) ?></td>
+                    <td><?= date($cekin) ?></td>
+                    <td><?= $tipekamar ?></td>
+                    <td><?= $telpon ?></td>
+                    <td>
+                        <?php
+                            if (isset($_POST['service'])) {
+                                echo '<ul>';
+                                $service=$_POST['service'];
+                                for ($i=0; $i < count($service); $i++) { 
+                                    echo '<li>';
+                                    echo $service[$i]."<br>";
+                                    echo '</li>';
+                                }
+                                echo '</ul>';
+                            }else {
+                                echo 'No Service';
+                            }
+                        ?>
+                    </td>
+                    <td>
+                    </td>
                 </tr>
                 
             </table>

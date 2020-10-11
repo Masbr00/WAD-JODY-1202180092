@@ -71,46 +71,32 @@
                             <div class="form-group">
                                 <label for="room_type">Room Type</label>
                                 <?php
-                                if(isset($_POST['standart'])) { 
-                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type" disabled>';
-                                    echo '<option value="Standart">Standart</option>';
-                                    echo '<option value="Superior">Superior</option>';
-                                    echo '<option value="Luxury">Luxury</option>';
-                                    echo '</select>';
-                                } 
-                                else if(isset($_POST['superior'])) { 
-                                    echo '<select disable class="custom-select custom-select-lg" id="room_type" name="room_type" disabled>';
-                                    echo '<option value="Superior">Superior</option>';
-                                    echo '<option value="Standart">Standart</option>';
-                                    echo '<option value="Luxury">Luxury</option>';
-                                    echo '</select>';
-                                }
-                                else if(isset($_POST['luxury'])) { 
-                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type" disabled>';
-                                    echo '<option value="Luxury">Luxury</option>';
-                                    echo '<option value="Standart">Standart</option>';
-                                    echo '<option value="Superior">Superior</option>';
-                                    echo '</select>';
-                                }
-                                else {
-                                    echo '<select class="custom-select custom-select-lg" id="room_type" name="room_type">';
-                                    echo '<option value="Standart">Standart</option>';
-                                    echo '<option value="Superior">Superior</option>';
-                                    echo '<option value="Luxury">Luxury</option>';
-                                    echo '</select>';
-                                }
+                                    if (isset($_POST['tombol'])) {
+                                        $tombol = $_POST['tombol'];
+                                    }
+
+                                    if (!empty($tombol)) {
+                                        echo '<input type="text" class="form-control" id="room"  readonly value='.$tombol.'>';
+                                    }else {
+                                        echo '<select class="form-control" id="room_type" name="room_type">';
+                                        echo '<option value="Standart">Standart</option>';
+                                        echo '<option value="Superior">Superior</option>';
+                                        echo '<option value="Luxury">Luxury</option>';
+                                        echo '</select>';
+                                    }
                                 ?>
                             </div>
                             <!-- end of kamar -->
                             <!-- servis -->
                             <div class="form-group">
                                 <label for="servis">Add Service(s)</label>
+                                <small  class="form-text">20$/Service</small>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="servis" name="servis">
+                                    <input type="checkbox" class="form-check-input" name="service[]" value = "Room Service">
                                     <label class="form-check-label" for="exampleCheck1">Room Service</label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="servis" name="servis">
+                                    <input type="checkbox" class="form-check-input" name="service[]" value = "Breakfast">
                                     <label class="form-check-label" for="exampleCheck1">Breakfast</label>
                                 </div>
                             </div>
@@ -131,21 +117,8 @@
             <!-- end of formulir -->
             <!-- room img -->
             <div class="col">
-                <!-- <img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:92%;height=auto;"> -->
-                <?php
-                if(isset($_POST['standart'])) { 
-                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
-                } 
-                else if(isset($_POST['superior'])) { 
-                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:485px;height=auto;">';
-                }
-                else if(isset($_POST['luxury'])) { 
-                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/luxury.jpg" style="width:485px;height=auto;">';
-                }
-                else {
-                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
-                }
-                ?>
+                    <!-- <img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">'; -->
+                    <img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
             </div>
             <!-- end of room img -->
         </div>

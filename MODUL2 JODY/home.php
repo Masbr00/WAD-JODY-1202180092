@@ -43,7 +43,9 @@
                             <li class="list-group-item bg-light">1 Bathroom</li>
                         </ul>
                         <div class="card-body">
-                        <input type="submit" value="Book Now" name="standart" class="btn btn-primary">
+                        <form action="booking.php" method="post">
+                            <button type="submit" value="Standart" name="tombol" class="btn btn-primary">Book Now</button>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -63,7 +65,9 @@
                             <li class="list-group-item bg-light">1 Workroom</li>
                         </ul>
                         <div class="card-body">
-                        <input type="submit" value="Book Now" name="superior" class="btn btn-primary">
+                        <form action="booking.php" method="post">
+                            <button type="submit" value="Superior" name="tombol" class="btn btn-primary">Book Now</button>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -85,7 +89,9 @@
                             <li class="list-group-item bg-light">1 Workroom</li>
                         </ul>
                         <div class="card-body">
-                        <input type="submit" value="Book Now" name="luxury" class="btn btn-primary">
+                        <form action="booking.php" method="post">
+                            <button type="submit" value="Luxury" name="tombol" class="btn btn-primary">Book Now</button>
+                        </form>
                         </div>
                     </div>
                 </div>
