@@ -131,7 +131,21 @@
             <!-- end of formulir -->
             <!-- room img -->
             <div class="col">
-                <img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:92%;height=auto;">
+                <!-- <img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:92%;height=auto;"> -->
+                <?php
+                if(isset($_POST['standart'])) { 
+                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
+                } 
+                else if(isset($_POST['superior'])) { 
+                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:485px;height=auto;">';
+                }
+                else if(isset($_POST['luxury'])) { 
+                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/luxury.jpg" style="width:485px;height=auto;">';
+                }
+                else {
+                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
+                }
+                ?>
             </div>
             <!-- end of room img -->
         </div>
