@@ -10,6 +10,8 @@
 </head>
 <body class="bg-white">
     <!-- navbar -->
+    <?php
+    ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
