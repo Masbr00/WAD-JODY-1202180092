@@ -159,17 +159,17 @@
                             switch ($kamar) {
                                 case 'Standard':
                                     $totalharga = (90*$duration)+($totalservice*20);
-                                    echo $totalharga;
+                                    echo "$ " . $totalharga;
                                     break;
 
                                 case 'Superior':
                                     $totalharga = (150*$duration)+($totalservice*20);
-                                    echo $totalharga;
+                                    echo "$ " . $totalharga;
                                     break;
 
                                 case 'Luxury':
                                     $totalharga = (200*$duration)+($totalservice*20);
-                                    echo $totalharga;
+                                    echo "$ " . $totalharga;
                                     break;
                                 default:
                                     echo 'No price tag';
