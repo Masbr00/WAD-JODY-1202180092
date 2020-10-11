@@ -103,21 +103,25 @@
             <div class="col">
                     <!-- <img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">'; -->
                     <?php
-                        switch ($tombol) {
-                            case 'Standard':
-                                echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
-                                break;
-
-                            case 'Superior':
-                                echo '<img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:485px;height=auto;">';
-                                break;
-
-                            case 'Luxury':
-                                echo '<img class="img-fluid" alt="Responsive image" src="assets/img/luxury.jpg" style="width:485px;height=auto;">';
-                                break;
-                            default:
-                                echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
-                                break;
+                        if (!empty($tombol)) {
+                            switch ($tombol) {
+                                case 'Standard':
+                                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
+                                    break;
+    
+                                case 'Superior':
+                                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/superior.jpg" style="width:485px;height=auto;">';
+                                    break;
+    
+                                case 'Luxury':
+                                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/luxury.jpg" style="width:485px;height=auto;">';
+                                    break;
+                                default:
+                                    echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
+                                    break;
+                            }
+                        }else {
+                            echo '<img class="img-fluid" alt="Responsive image" src="assets/img/standart.jpeg" style="width:485px;height=auto;">';
                         }
                     ?>
             </div>
