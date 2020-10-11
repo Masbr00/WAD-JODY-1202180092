@@ -35,18 +35,18 @@
 <ol>
   <li><b>Home.php Page<br>
   <a href="https://user-images.githubusercontent.com/60178797/95677984-a2ba2a00-0bf3-11eb-8a88-77ac358ed9b7.png">
-    Tampilkan gambar Home Page</a>
+    Tampilkan gambar Home.php Page</a>
   
   <li>Booking.php Page 1<br>
   <a href="https://user-images.githubusercontent.com/60178797/95678004-b9f91780-0bf3-11eb-94d2-45a8d4c5ca4f.png">
-    Tampilkan gambar Profile Page</a>
+    Tampilkan gambar Booking.php Page 1</a>
   
   <li>Booking.php Page 2<br>
   <a href="https://user-images.githubusercontent.com/60178797/95678015-caa98d80-0bf3-11eb-83de-49e60240b0b9.png">
-    Tampilkan gambar Profile Page</a>
+    Tampilkan gambar Booking.php Page 2</a>
                                                                                                                          
   <li>Mybooking.php Page<br>
   <a href="https://user-images.githubusercontent.com/60178797/95678023-deed8a80-0bf3-11eb-9a4b-63fb30cb6b50.png">
-    Tampilkan gambar Products Page</a></b>
+    Tampilkan gambar Mybooking.php Page</a></b>
 </ol>
 <!-- End of MODUL 2 -->
