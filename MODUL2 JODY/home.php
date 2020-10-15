@@ -43,7 +43,7 @@
                             <li class="list-group-item bg-light">1 Bathroom</li>
                         </ul>
                         <div class="card-body">
-                        <form action="booking.php" method="post">
+                        <form action="booking.php" method="get">
                             <button type="submit" value="Standard" name="tombol" class="btn btn-primary">Book Now</button>
                         </form>
                         </div>

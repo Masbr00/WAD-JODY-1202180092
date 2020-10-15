@@ -128,7 +128,7 @@
                             if (isset($_POST['service'])) {
                                 echo '<ul>';
                                 $service=$_POST['service'];
-                                for ($i=0; $i < count($service); $i++) { 
+                                for ($i==0; $i < count($service); $i++) { 
                                     echo '<li>';
                                     echo $service[$i]."<br>";
                                     echo '</li>';
