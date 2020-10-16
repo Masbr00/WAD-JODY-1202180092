@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <div class="card-text">
                         <!-- form -->
-                        <form action="mybooking.php" metod="post">
+                        <form action="mybooking.php" method="post">
                             <!-- nama -->
                             <div class="form-group">
                                 <label for="name">Nama</label>
