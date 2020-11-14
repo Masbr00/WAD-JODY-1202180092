@@ -29,7 +29,9 @@
                     <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buat Event</button>
+                    <form action="buatevent.php">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buat Event</button>
+                    </form>
                 </li>
             </ul>
         </div>
@@ -39,22 +41,18 @@
     <!-- content -->
     <div class="container mt-3">
         <h3 class="text-primary" style="text-align: center;">WELCOME TO EAD EVENTS!<h3>
-        <?php while ($selects = mysqli_fetch_assoc($select)) { 
-            $id     = $selects['id'];
-            $name   = $selects['name'];
-            $desc   = $selects['deskripsi'];
-            $pict   = $selects['gambar'];
-            $catg   = $selects['kategori'];
-            $date   = $selects['tanggal'];
-            $start  = $selects['mulai'];
-            $end    = $selects['berakhir'];
-            $place  = $selects['tempat'];
-            $prc    = $selects['price'];
-            $benft  = $selects['benefit'];
-            ?>
-            
-        <?php } ?>
-        
+        <?php
+            $jumlahdata = mysqli_num_rows($select); ?>
+                <?php if ($jumlahdata == 0) { ?>
+                    <div class="card ml-3 border-0" style="width: 18rem;">
+                        <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;text-align: center;">No Events Found</p>
+                        </div>
+                    </div>
+                <?php } else { ?>
+                <!-- BELUM SELESAI -->
+                sdfsdfsdf 
+                <?php } ?>
     </div>
     <!-- end of content -->
 </body>
