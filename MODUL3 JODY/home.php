@@ -7,6 +7,14 @@
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <title>Home</title>
+
+    <!-- koneksi database -->
+    <?php
+        include ('config.php');
+        $query = "SELECT * FROM event_table";
+        $select = mysqli_query($conn, $query);
+    ?>
+    <!-- end of koneksi database -->
 </head>
 <body>
     <!-- navbar -->
@@ -31,6 +39,22 @@
     <!-- content -->
     <div class="container mt-3">
         <h3 class="text-primary" style="text-align: center;">WELCOME TO EAD EVENTS!<h3>
+        <?php while ($selects = mysqli_fetch_assoc($select)) { 
+            $id     = $selects['id'];
+            $name   = $selects['name'];
+            $desc   = $selects['deskripsi'];
+            $pict   = $selects['gambar'];
+            $catg   = $selects['kategori'];
+            $date   = $selects['tanggal'];
+            $start  = $selects['mulai'];
+            $end    = $selects['berakhir'];
+            $place  = $selects['tempat'];
+            $prc    = $selects['price'];
+            $benft  = $selects['benefit'];
+            ?>
+            
+        <?php } ?>
+        
     </div>
     <!-- end of content -->
 </body>
