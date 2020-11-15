@@ -41,4 +41,7 @@ if (isset($_POST['submit'])) {
         header("location:home.php");
     }
 }
+if (isset($_POST['cancel'])) {
+    header("location:home.php");
+}
 ?>

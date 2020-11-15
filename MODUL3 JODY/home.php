@@ -53,7 +53,7 @@
                 <?php } else { 
                     while ($selects = mysqli_fetch_assoc($select)){?>
                         <div class="card" style="width: 18rem;margin-top: 100px;">
-                            <img class="card-img-top" src="assets/img/<?php echo $selects['gambar']?>" alt="Card image cap" style="width:286px;height:auto;">
+                            <img class="card-img-top" src="assets/img/<?php echo $selects['gambar']?>" alt="Card image cap" style="width:286px;height:286px;">
                             <div class="card-body">
                                 <h4 class="card-title mb-4"><?php echo $selects['name']?></h4>
                                 <h5>

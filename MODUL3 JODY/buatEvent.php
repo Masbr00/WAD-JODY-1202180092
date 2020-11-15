@@ -43,7 +43,7 @@
         </div>
         <form action="create.php" method="post" enctype="multipart/form-data">
             <div class="row mx-auto">
-                <div class="col-sm bg-warning rounded-bottom mr-2">
+                <div class="col-sm rounded-bottom mr-2 border">
                     <div class="form-group">
                         <label for="name"><b>Name</b></label>
                         <input type="text" class="form-control" style="background-color:#e8f0fe;" name="nama">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="gambar"><b>Upload Gambar</b></label>
-                        <input type="file" class="form-control" name="foto" required="required">
+                        <input type="file" class="form-control" name="foto">
                     </div>
                     <div class="form-group">
                         <label for="kategori"><b>Kategori</b></label>
@@ -72,7 +72,7 @@
                     
                 </div>
 
-                <div class="col-sm bg-success rounded-bottom">
+                <div class="col-sm rounded-bottom border">
                     <div class="form-group">
                         <label for="tanggal"><b>Tanggal</b></label>
                         <input type="date" class="form-control" name="tanggal">
@@ -93,7 +93,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name"><b>Harga</b></label>
-                        <input type="number" class="form-control"  name="harga">
+                        <input type="number" class="form-control" name="harga">
                     </div>
                     <div class="form-group">
                         <label for="kategori"><b>Benefit</b></label>
@@ -112,9 +112,9 @@
                                 </div>
                             </div>
                     </div>
-                    <div align="right">
+                    <div align="right" class="mb-3">
                         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                        <button type="submit" class="btn btn-danger">Cancel</button>
+                        <button type="submit" class="btn btn-danger" name="cancel">Cancel</button>
                     </div>
                 </div>
             </div>
