@@ -4,7 +4,6 @@ include ('config.php');
 if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $deskripsi = $_POST['deskripsi'];
-    $gambar = $_POST['nama'];
     $kategori = $_POST['kategori'];
     $tanggal = $_POST['tanggal'];
     $mulai = $_POST['mulai'];
@@ -33,7 +32,7 @@ if (isset($_POST['submit'])) {
     }
 
     $query = "INSERT into event_table(name,deskripsi,gambar,kategori,tanggal,mulai,berakhir,tempat,harga,benefit) 
-            values ('$nama', '$deskripsi', '$gambar', '$kategori', '$tanggal', '$mulai', '$berakhir', '$tempat', '$harga', '$benefit')";
+            values ('$nama', '$deskripsi', '$xx', '$kategori', '$tanggal', '$mulai', '$berakhir', '$tempat', '$harga', '$benefit')";
     $insert = mysqli_query($conn, $query);
     if ($insert) {
         header("location:home.php");

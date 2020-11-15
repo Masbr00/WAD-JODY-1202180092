@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 
     <!-- koneksi database -->
@@ -49,9 +50,32 @@
                             <p class="card-text" style="font-size: 18px;text-align: center;">No Events Found</p>
                         </div>
                     </div>
-                <?php } else { ?>
-                <!-- BELUM SELESAI -->
-                sdfsdfsdf 
+                <?php } else { 
+                    while ($selects = mysqli_fetch_assoc($select)){?>
+                        <div class="card" style="width: 18rem;margin-top: 100px;">
+                            <img class="card-img-top" src="assets/img/<?php echo $selects['gambar']?>" alt="Card image cap" style="width:286px;height:auto;">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4"><?php echo $selects['name']?></h4>
+                                <h5>
+                                    <i class="fa fa-calendar" style="color:orange"></i>
+                                    <spann class="ml-2"><?php echo $selects['tanggal']?></spann>
+                                    <br>
+                                    <br>
+                                    <i class="fa fa-map-marker fa-lg" style="color:orange"></i>
+                                    <spann class="ml-2"><?php echo $selects['tempat']?></spann>
+                                    <br>
+                                    <br>
+                                    kategori : Event <?php echo $selects['kategori']?>
+                                </h5>
+                                <hr>
+                                <div align="right">
+                                    <form action="detailsEvent.php" method="post">
+                                        <button type="submit" class="btn btn-primary px-4" name="submit">Detail</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 <?php } ?>
     </div>
     <!-- end of content -->
