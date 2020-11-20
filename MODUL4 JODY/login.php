@@ -54,6 +54,10 @@
                         <label>Kata Sandi</label>
                         <input type="password" class="form-control" name="password" style="width:80%" placeholder="Buat Kata Sandi">
                     </div>
+                    <div class="form-check ml-3">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
+                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                    </div>
                     <div class="form-group ml-3" align="center">
                         <button type="submit" name="submit" class="btn btn-primary mb-2">Daftar</button>
                         <br>
