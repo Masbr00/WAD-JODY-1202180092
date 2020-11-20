@@ -29,28 +29,32 @@
     </nav>
     <!-- end Navbar -->
     <div class="container my-3">
-        <div class="card my-4 mx-auto" style="width: 25rem;">
+        <div class="card my-4 mx-auto px-3" style="width: 26rem;">
             <div class="card-body">
                 <h5 class="card-title" align="center">Registrasi</h5>
                 <hr></hr>
                 <form>
-                    <div class="form-group">
+                    <div class="form-group ml-3">
                         <label>Nama</label>
-                        <input type="text" class="form-control" name="nama" style="width:80%">
+                        <input type="text" class="form-control" name="nama" style="width:80%" placeholder="Masukkan Nama Lengkap">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ml-3">
                         <label>E-mail</label>
-                        <input type="email" class="form-control" name="email" style="width:80%" placeholder="example@mail.com">
+                        <input type="email" class="form-control" name="email" style="width:80%" placeholder="Masukkan Alamat E-mail">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ml-3">
                         <label>No. Handphone</label>
-                        <input type="number" class="form-control" name="no_hp" style="width:80%" placeholder="08xx-xxxx-xxxx">
+                        <input type="number" class="form-control" name="no_hp" style="width:80%" placeholder="Masukkan Nomor Handphone">
                     </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="password" style="width:80%">
+                    <div class="form-group ml-3">
+                        <label>Kata Sandi</label>
+                        <input type="password" class="form-control" name="password" style="width:80%" placeholder="Buat Kata Sandi">
                     </div>
-                    <div class="form-group" align="center">
+                    <div class="form-group ml-3">
+                        <label>Konfirmasi Kata Sandi</label>
+                        <input type="password" class="form-control" name="password" style="width:80%" placeholder="Konfirmasi Kata Sandi">
+                    </div>
+                    <div class="form-group ml-3" align="center">
                         <button type="submit" name="submit" class="btn btn-primary mb-2">Daftar</button>
                         <br>
                         Sudah punya akun? <a href="login.php">Login</a>
