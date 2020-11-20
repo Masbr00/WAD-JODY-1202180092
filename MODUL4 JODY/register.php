@@ -28,6 +28,8 @@
         </div>
     </nav>
     <!-- end Navbar -->
+
+    <!-- content -->
     <div class="container my-3">
         <div class="card my-4 mx-auto px-3" style="width: 26rem;">
             <div class="card-body">
@@ -63,5 +65,6 @@
             </div>
         </div>
     </div>
+    <!-- end of content -->
 </body>
 </html>
