@@ -18,10 +18,6 @@ while ($user_ids = mysqli_fetch_assoc($user_id)) {
 //menampilkan item
 $query = "SELECT * FROM cart WHERE user_id = '$id_user'";
 $select = mysqli_query($conn, $query);
-
-function removeday() {
-    echo 'nyahalooo';
-}
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +90,7 @@ function removeday() {
                             // 
                     echo '<td>'; ?> <!-- POTONG DISINI -->
 
-                    <a href="delete.php?name=<?php echo $selects['id']; ?>" class="btn btn-danger btn-md" onclick="removeday()">Hapus</a>
+                    <a href="delete.php?name=<?php echo $selects['id']; ?>" class="btn btn-danger btn-md" onclick="alert('Item berhasil dihapus')">Hapus</a>
 
                     <?php echo '</td>'; // SAMBUNG DISINI
                     echo '</tr>';
