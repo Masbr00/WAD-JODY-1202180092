@@ -1,17 +1,19 @@
-<?php 
+<?php
+
 class database{
     var $host = "localhost";
-    var $username = "root";
-    var $password = "";
-    var $database = "modul4_jody";
+    var $user = "root";
+    var $pass = "";
+    var $name = "modul4_jody";
     var $koneksi;
 
     function __construct(){
-        $this->koneksi = mysqli_connect($this->host, $this->username, $this->password, $this->database);
+        $this->koneksi = mysqli_connect($this->host, $this->user, $this->pass, $this->name);
     }
 
     function register($nama, $email, $no_hp, $password){
-        $insert = mysqli_query($this->koneksi,"INSERT INTO user VALUES ('','$nama','$email','$no_hp',''$password')");
+        $insert = mysqli_query($this->koneksi,"INSERT INTO user VALUES ('','$nama','$email','$no_hp','$password')");
+        return $insert;
     }
 
     function login($email, $password, $remember){

@@ -1,3 +1,29 @@
+<?php
+include_once('function/config.php');
+$database = new database();
+if (isset($_POST['register'])) {
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $no_hp = $_POST['no_hp'];
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+
+    if ($_POST['konfirmasi_password'] == $_POST['password']) {
+        if ($database->register($nama,$email,$no_hp,$password)) {
+            echo '<div class="alert alert-warning" role="alert">';
+            echo 'Berhasil registrasi';
+            echo '</div>';
+        }
+    }
+    else {
+        echo '<div class="alert alert-danger" role="alert">';
+        echo 'Gagal registrasi';
+        echo '<br>';
+        echo 'Periksa kembali password anda';
+        echo '</div>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +61,7 @@
             <div class="card-body">
                 <h5 class="card-title" align="center">Registrasi</h5>
                 <hr></hr>
-                <form>
+                <form method="post" action="">
                     <div class="form-group ml-3">
                         <label>Nama</label>
                         <input type="text" class="form-control" name="nama" style="width:80%" placeholder="Masukkan Nama Lengkap">
@@ -54,10 +80,10 @@
                     </div>
                     <div class="form-group ml-3">
                         <label>Konfirmasi Kata Sandi</label>
-                        <input type="password" class="form-control" name="password" style="width:80%" placeholder="Konfirmasi Kata Sandi">
+                        <input type="password" class="form-control" name="konfirmasi_password" style="width:80%" placeholder="Konfirmasi Kata Sandi">
                     </div>
                     <div class="form-group ml-3" align="center">
-                        <button type="submit" name="submit" class="btn btn-primary mb-2">Daftar</button>
+                        <button type="submit" name="register" class="btn btn-primary mb-2">Daftar</button>
                         <br>
                         Sudah punya akun? <a href="login.php">Login</a>
                     </div>
