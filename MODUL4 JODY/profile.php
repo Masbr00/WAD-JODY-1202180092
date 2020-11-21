@@ -29,7 +29,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="profile.php">Profile</a>
-                            <a class="dropdown-item" href="#">Log Out</a>
+                            <a class="dropdown-item" href="logout.php">Log Out</a>
                         </div>
                     </div>
                 </li>

@@ -8,7 +8,7 @@ if (! isset($_SESSION['is_login'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,7 +35,7 @@ if (! isset($_SESSION['is_login'])) {
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="profile.php">Profile</a>
-                            <a class="dropdown-item" href="#">Log Out</a>
+                            <a class="dropdown-item" href="logout.php">Log Out</a>
                         </div>
                     </div>
                 </li>
