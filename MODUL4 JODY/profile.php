@@ -24,7 +24,7 @@ if (isset($_POST['update'])) {
             $sql = "UPDATE user SET nama='$nama', email='$email', no_hp='$no_hp', password='$password' WHERE email='$email'";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
-            header('Refresh:1');
+            header('Refresh:2');
             echo '<div class="alert alert-warning" role="alert">';
             echo 'Berhasil di update!';
             echo '</div>';
@@ -34,7 +34,7 @@ if (isset($_POST['update'])) {
         $conn = null;
     }
     else{
-            header('Refresh:1');
+            header('Refresh:2');
             echo '<div class="alert alert-danger" role="alert">';
             echo 'Gagal di update!';
             echo '</div>';

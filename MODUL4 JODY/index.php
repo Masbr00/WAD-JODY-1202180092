@@ -5,6 +5,71 @@ session_start();
 if (! isset($_SESSION['is_login'])) {
     header('location:login.php');
 }
+
+// get userid
+$current = $_SESSION['email'];
+$sql = "SELECT id FROM user WHERE email = '$current'";
+$user_id = mysqli_query($conn,$sql);
+$id_user=0;
+while ($user_ids = mysqli_fetch_assoc($user_id)) {
+    $id_user = $user_ids['id'];
+}
+
+// menambahkan barang item1
+if(isset($_POST['item1'])){
+    // tambah barang
+    $sql = "INSERT INTO cart (user_id, nama_barang, harga) VALUES ('$id_user', 'Yuja Niacin', '169000')";
+    $insert = mysqli_query($conn, $sql);
+    if ($insert) {
+            header("Refresh:2");
+            echo '<div class="alert alert-warning" role="alert">';
+            echo 'Berhasil Ditambahkan';
+            echo '</div>';
+    }
+    else{
+            header("Refresh:2");
+            echo '<div class="alert alert-danger" role="alert">';
+            echo 'Gagal Menambahkan';
+            echo '</div>';
+    }
+}
+// menambahkan barang item2
+if(isset($_POST['item2'])){
+    // tambah barang
+    $sql = "INSERT INTO cart (user_id, nama_barang, harga) VALUES ('$id_user', 'Snail Truecica', '180000')";
+    $insert = mysqli_query($conn, $sql);
+    if ($insert) {
+            header("Refresh:2");
+            echo '<div class="alert alert-warning" role="alert">';
+            echo 'Berhasil Ditambahkan';
+            echo '</div>';
+    }
+    else{
+            header("Refresh:2");
+            echo '<div class="alert alert-danger" role="alert">';
+            echo 'Gagal Menambahkan';
+            echo '</div>';
+    }
+}
+// menambahkan barang item3
+if(isset($_POST['item3'])){
+    // tambah barang
+    $sql = "INSERT INTO cart (user_id, nama_barang, harga) VALUES ('$id_user', 'Miracle Toner', '108000')";
+    $insert = mysqli_query($conn, $sql);
+    if ($insert) {
+            header("Refresh:2");
+            echo '<div class="alert alert-warning" role="alert">';
+            echo 'Berhasil Ditambahkan';
+            echo '</div>';
+    }
+    else{
+            header("Refresh:2");
+            echo '<div class="alert alert-danger" role="alert">';
+            echo 'Gagal Menambahkan';
+            echo '</div>';
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -54,48 +119,55 @@ if (! isset($_SESSION['is_login'])) {
                 <p class="mb-3"align="center">Tersedia Skincare dengan harga murah tapi bukan murahan dan berkualitas</p>
                 <br>
             </div>
-            <div class="card-body pt-0 px-3">
-                <div class="row border rounded">
-                    <div class="col card border-0 px-0">
-                        <img class="card-img-top" src="assets/img/yuja.jpg" alt="Card image cap" style="height:199.5px;height:199.5px">
-                        <div class="card-body px-3">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <hr>
-                            <p><b>Harga</b></p>
+            <form method="post" action="">
+                <div class="card-body pt-0 px-3">
+                    <div class="row border rounded">
+                        <div class="col card border-0 px-0">
+                            <img class="card-img-top" src="assets/img/yuja.jpg" alt="Card image cap" style="height:199.5px;height:199.5px">
+                            <div class="card-body px-3">
+                                <h5 class="card-title">YUJA NIACIN 30 DAYS BLEMISH CARE SERUM</h5>
+                                <p class="card-text">Produk terbaru dari Somebymi yang memiliki manfaat untuk Whitening + blemish care + Ant-wrinkle, 
+                                sangat recomended untuk masalah kulit kusam, kulit kering dan bekas jerawat atau FLEK hitam</p>
+                                <hr>
+                                <p><b>Rp169.000</b></p>
+                            </div>
+                        </div>
+                        <div class="col card border-top-0 border-bottom-0 px-0">
+                            <img class="card-img-top" src="assets/img/somebymi.jpg" alt="Card image cap" style="height:199.5px;height:199.5px">
+                            <div class="card-body px-3">
+                                <h5 class="card-title">SOMEBYMI Snail Truecica Miracle Repair Cream</h5>
+                                <p class="card-text">Sebagai pelembab, krim ini mampu memberikan kelembapan yang menyeluruh dan tahan lama bagi kulit, 
+                                sehingga terasa halus, lembab dan kenyal. Mencerahkan, menghambay penuan seperti keriput dan garis halus, juga 
+                                menenangkan kulit yang iritasi, dengan kandungan 420,000ppm Snail Truecia</p>
+                                <hr>
+                                <p><b>Rp180.000</b></p>
+                            </div>
+                        </div>
+                        <div class="col card border-0 px-0">
+                            <img class="card-img-top" src="assets/img/toner.jpg" alt="Card image cap" style="height:199.5px;height:199.5px">
+                            <div class="card-body px-3">
+                                <h5 class="card-title">30 DAYS MIRACLE TONER</h5>
+                                <p class="card-text">Dengan kandungan AHA, BHA dan PHA bekerja secara efektif untuk membuat kulit lebih bersih dan lebih 
+                                bersinar, mengandung 10.000 ppm ekstrak pohon teh alami yang secara efektif meningkatkan elastisitas dan menutrisi kulit 
+                                Anda tanpa efek iritasi karena tidak mengandung 20 bahan 500 dan pewarna berbahaya</p>
+                                <hr>
+                                <p><b>Rp108.000</b></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col card border-top-0 border-bottom-0 px-0">
-                        <img class="card-img-top" src="assets/img/somebymi.jpg" alt="Card image cap" style="height:199.5px;height:199.5px">
-                        <div class="card-body px-3">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <hr>
-                            <p><b>Harga</b></p>
+                    <div class="row border rounded" align="center">
+                        <div class="col card border-0">
+                            <button type="submit" name="item1" class="btn btn-primary btn-sm my-3" style="width:100%">Tambahkan ke Keranjang</button>
                         </div>
-                    </div>
-                    <div class="col card border-0 px-0">
-                        <img class="card-img-top" src="assets/img/toner.jpg" alt="Card image cap" style="height:199.5px;height:199.5px">
-                        <div class="card-body px-3">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <hr>
-                            <p><b>Harga</b></p>
+                        <div class="col card border-top-0 border-bottom-0">
+                            <button type="submit" name="item2" class="btn btn-primary btn-sm my-3" style="width:100%">Tambahkan ke Keranjang</button>
+                        </div>
+                        <div class="col card border-0">
+                            <button type="submit" name="item3" class="btn btn-primary btn-sm my-3" style="width:100%">Tambahkan ke Keranjang</button>
                         </div>
                     </div>
                 </div>
-                <div class="row border rounded" align="center">
-                    <div class="col card border-0">
-                        <a href="#" class="btn btn-primary btn-sm my-3" style="width:100%">Go somewhere</a>
-                    </div>
-                    <div class="col card border-top-0 border-bottom-0">
-                        <a href="#" class="btn btn-primary btn-sm my-3" style="width:100%">Go somewhere</a>
-                    </div>
-                    <div class="col card border-0">
-                        <a href="#" class="btn btn-primary btn-sm my-3" style="width:100%">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- end of content -->

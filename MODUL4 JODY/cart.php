@@ -5,6 +5,23 @@ session_start();
 if (! isset($_SESSION['is_login'])) {
     header('location:login.php');
 }
+
+// get userid
+$current = $_SESSION['email'];
+$sql = "SELECT id FROM user WHERE email = '$current'";
+$user_id = mysqli_query($conn,$sql);
+$id_user=0;
+while ($user_ids = mysqli_fetch_assoc($user_id)) {
+    $id_user = $user_ids['id'];
+}
+
+//menampilkan item
+$query = "SELECT * FROM cart WHERE user_id = '$id_user'";
+$select = mysqli_query($conn, $query);
+
+function removeday() {
+    echo 'nyahalooo';
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +62,6 @@ if (! isset($_SESSION['is_login'])) {
         </div>
     </nav>
     <!-- end Navbar -->
-
     <!-- content -->
     <div class="container my-5">
         <table class="table table-striped">
@@ -57,14 +73,34 @@ if (! isset($_SESSION['is_login'])) {
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td><button type="submit" class="btn btn-danger">Hapus</button></td>
-                </tr>
-            </tbody>
+            <?php
+                $i = 0;
+                $totalharga = 0;
+                while ($selects = mysqli_fetch_assoc($select)) {
+                    echo '<tbody>';
+                    echo '<tr>';
+                    //
+                    echo '<th scope="row">';
+                    echo $i+=1;
+                    echo '</th>';
+                    // 
+                    echo '<td>';
+                    echo $selects['nama_barang'];
+                    echo '</td>';
+
+                    echo '<td>'; 
+                    echo 'Rp ' . number_format($selects['harga'], 0, ",", ",");
+                    echo '</td>';
+                            // 
+                    echo '<td>'; ?> <!-- POTONG DISINI -->
+
+                    <a href="delete.php?name=<?php echo $selects['id']; ?>" class="btn btn-danger btn-md" onclick="removeday()">Hapus</a>
+
+                    <?php echo '</td>'; // SAMBUNG DISINI
+                    echo '</tr>';
+                    echo '</tbody>';
+                }
+            ?>
         </table>
         <!-- Footer -->
         <footer class="page-footer font-small blue">
