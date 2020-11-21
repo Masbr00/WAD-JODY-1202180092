@@ -1,5 +1,11 @@
 <?php
 
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "modul4_jody";
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
 class database{
     var $host = "localhost";
     var $user = "root";

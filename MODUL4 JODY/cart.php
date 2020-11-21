@@ -1,3 +1,12 @@
+<?php
+include_once('function/config.php');
+$database = new database();
+session_start();
+if (! isset($_SESSION['is_login'])) {
+    header('location:login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +33,7 @@
                 <li class="nav-item active mr-3">
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Selamat Datang, <font class="text-primary">@nama</font>
+                            Selamat Datang, <font class="text-primary"><?php echo $_SESSION['nama']?></font>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="profile.php">Profile</a>

@@ -1,4 +1,6 @@
 <?php
+include ('function/config.php');
+$database = new database();
 session_start();
 if (! isset($_SESSION['is_login'])) {
     header('location:login.php');
@@ -31,7 +33,7 @@ if (! isset($_SESSION['is_login'])) {
                 <li class="nav-item active mr-3">
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Selamat Datang, <font class="text-primary">@nama</font>
+                            Selamat Datang, <font class="text-primary"><?php echo $_SESSION['nama']?></font>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="profile.php">Profile</a>
@@ -43,7 +45,6 @@ if (! isset($_SESSION['is_login'])) {
         </div>
     </nav>
     <!-- end Navbar -->
-
     <!-- content -->
     <div class="container my-5">
         <div class="card mx-auto border-0" style="width:65%">

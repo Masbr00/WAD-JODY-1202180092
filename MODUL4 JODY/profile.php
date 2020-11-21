@@ -1,3 +1,18 @@
+<?php
+include_once('function/config.php');
+$database = new database();
+session_start();
+if (! isset($_SESSION['is_login'])) {
+    header('location:login.php');
+}
+
+// Untuk Menampilkan Data Profil 
+$current = $_SESSION['email'];
+$sql = "SELECT * FROM user WHERE email = '$current'";
+$data = mysqli_query($conn,$sql);
+// END
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +40,7 @@
                 <li class="nav-item active mr-3">
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Selamat Datang, <font class="text-primary">@nama</font>
+                            Selamat Datang, <font class="text-primary"><?php echo $_SESSION['nama']?></font>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="profile.php">Profile</a>
@@ -37,53 +52,60 @@
         </div>
     </nav>
     <!-- end Navbar -->
-
     <!-- content -->
     <div class="container my-3">
         <div class="card centered mx-auto" style="width: 70%;">
             <div class="card-body">
                 <h2 class="card-title" align="center">Profile</h2>
                 <form>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control-plaintext" value="email@example.com">
+                    <?php
+                        while ($datas = mysqli_fetch_assoc($data)) {
+                    ?>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control-plaintext" value="<?php echo $datas['email'] ?>" readonly>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Nama</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Nama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="<?php echo $datas['nama'] ?>">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Nomor Handphone</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Nomor Handphone</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" value="<?php echo $datas['no_hp'] ?>">
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control">
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Password Confirm</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Password Confirm</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Warna Navbar</label>
-                        <div class="col-sm-10">
-                            <select id="select-color" name="warna_nav">
-                                <option value="#f8f9fa">Light</option>
-                                <option value="#343a40">Dark</option>
-                            </select>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Warna Navbar</label>
+                            <div class="col-sm-10">
+                                <select id="select-color" name="warna_nav">
+                                    <option value="#f8f9fa">Light</option>
+                                    <option value="#343a40">Dark</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button type="submit" class="btn btn-light btn-block">Cancel</button>
+                        </div>
+                    <?php } ?>
                 </form>
             </div>
         </div>
