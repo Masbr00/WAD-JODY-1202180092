@@ -9,12 +9,14 @@ if (isset($_POST['register'])) {
 
     if ($_POST['konfirmasi_password'] == $_POST['password']) {
         if ($database->register($nama,$email,$no_hp,$password)) {
+            header("Refresh:2; url=login.php");
             echo '<div class="alert alert-warning" role="alert">';
             echo 'Berhasil registrasi';
             echo '</div>';
         }
     }
     else {
+        header("Refresh:2");
         echo '<div class="alert alert-danger" role="alert">';
         echo 'Gagal registrasi';
         echo '<br>';
