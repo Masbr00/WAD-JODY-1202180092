@@ -12,14 +12,14 @@
 <body class="bg-white">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">WAD Beauty</a>
+        <a class="navbar-brand" href="index.php">WAD Beauty</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active mr-3">
-                    <a class="nav-link" href="login.php"><i class="fa fa-shopping-cart" style="font-size:22px"></i></a>
+                    <a class="nav-link" href="#"><i class="fa fa-shopping-cart" style="font-size:22px"></i></a>
                 </li>
                 <li class="nav-item active mr-3">
                     <div class="dropdown">
@@ -27,9 +27,8 @@
                             Selamat Datang, <font class="text-primary">@nama</font>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="profile.php">Profile</a>
+                            <a class="dropdown-item" href="#">Log Out</a>
                         </div>
                     </div>
                 </li>
