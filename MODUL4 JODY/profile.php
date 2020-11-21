@@ -11,12 +11,46 @@ $current = $_SESSION['email'];
 $sql = "SELECT * FROM user WHERE email = '$current'";
 $data = mysqli_query($conn,$sql);
 // END
+
+// untuk update profil
+if (isset($_POST['update'])) {
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $no_hp = $_POST['no_hp'];
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+    
+    if ($_POST['confirm_password'] == $_POST['password']){
+        try {
+            $sql = "UPDATE user SET nama='$nama', email='$email', no_hp='$no_hp', password='$password' WHERE email='$email'";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            header('Refresh:1');
+            echo '<div class="alert alert-warning" role="alert">';
+            echo 'Berhasil di update!';
+            echo '</div>';
+        } catch (PDOException $e) {
+            echo $sql . "<br>" . $e->getMessage();
+        }
+        $conn = null;
+    }
+    else{
+            header('Refresh:1');
+            echo '<div class="alert alert-danger" role="alert">';
+            echo 'Gagal di update!';
+            echo '</div>';
+    }
+    }
+else{
+    if(isset($_POST['cancel'])){
+        header('location: index.php');
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <script src="https://kit.fontawesome.com/fe18d29869.js" crossorigin="anonymous"></script>
@@ -57,39 +91,39 @@ $data = mysqli_query($conn,$sql);
         <div class="card centered mx-auto" style="width: 70%;">
             <div class="card-body">
                 <h2 class="card-title" align="center">Profile</h2>
-                <form>
+                <form method="post" action="">
                     <?php
                         while ($datas = mysqli_fetch_assoc($data)) {
                     ?>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control-plaintext" value="<?php echo $datas['email'] ?>" readonly>
+                                <input type="text" class="form-control-plaintext" name="email" value="<?php echo $datas['email'] ?>" readonly>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Nama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="<?php echo $datas['nama'] ?>">
+                                <input type="text" class="form-control" name="nama" value="<?php echo $datas['nama'] ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Nomor Handphone</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" value="<?php echo $datas['no_hp'] ?>">
+                                <input type="number" class="form-control" name="no_hp" value="<?php echo $datas['no_hp'] ?>">
                             </div>
                         </div>
                         <hr>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control">
+                                <input type="password" class="form-control" name="password">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Password Confirm</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control">
+                                <input type="password" class="form-control" name="confirm_password">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -102,8 +136,8 @@ $data = mysqli_query($conn,$sql);
                             </div>
                         </div>
                         <div class="form-group row">
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                            <button type="submit" class="btn btn-light btn-block">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-block" name="update">Submit</button>
+                            <button type="submit" class="btn btn-light btn-block" name="cancel">Cancel</button>
                         </div>
                     <?php } ?>
                 </form>
