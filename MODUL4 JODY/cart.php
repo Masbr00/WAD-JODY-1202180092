@@ -19,10 +19,19 @@
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active mr-3">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="login.php"><i class="fa fa-shopping-cart" style="font-size:22px"></i></a>
                 </li>
                 <li class="nav-item active mr-3">
-                    <a class="nav-link" href="#">Register</a>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Selamat Datang, <font class="text-primary">@nama</font>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -49,6 +58,15 @@
                 </tr>
             </tbody>
         </table>
+        <!-- Footer -->
+        <footer class="page-footer font-small blue">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="#"> WAD Beauty</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
     </div>
     <!-- end of content -->
 </body>

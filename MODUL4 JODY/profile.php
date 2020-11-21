@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/fe18d29869.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,17 +20,19 @@
         <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active mr-3">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="login.php"><i class='fas fa-shopping-cart'></i></a>
                 </li>
                 <li class="nav-item active mr-3">
                     <a class="nav-link" href="#">Register</a>
                 </li>
+                <i class='fas fa-shopping-cart'></i>
             </ul>
         </div>
     </nav>
     <!-- end Navbar -->
 
     <!-- content -->
+    <i class='fas fa-shopping-cart'>er</i>
     <div class="container my-3">
         <div class="card centered mx-auto" style="width: 70%;">
             <div class="card-body">
