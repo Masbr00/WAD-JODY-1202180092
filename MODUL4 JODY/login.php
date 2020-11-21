@@ -1,3 +1,33 @@
+<?php
+session_start();
+include_once('function/config.php');
+$database = new database();
+
+if (isset($_SESSION['is_login'])) {
+    header('location:index.php');
+}
+
+if (isset($_COOKIE['email'])) {
+    $database->relogin($_COOKIE['email']);
+    header('location:index.php');
+}
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    if (isset($_POST['remember'])) {
+        $remember = TRUE;
+    }
+    else {
+        $remember = FALSE;
+    }
+
+    if ($database->login($email,$password,$remember)) {
+        header('location:index.php');
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +75,7 @@
             <div class="card-body">
                 <h5 class="card-title" align="center">Login</h5>
                 <hr></hr>
-                <form>
+                <form method="post" action="">
                     <div class="form-group ml-3">
                         <label>E-mail</label>
                         <input type="email" class="form-control" name="email" style="width:80%" placeholder="Masukkan Alamat E-mail">
@@ -58,10 +88,10 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
                         <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                     </div>
-                    <div class="form-group ml-3" align="center">
-                        <button type="submit" name="submit" class="btn btn-primary mb-2">Daftar</button>
+                    <div class="form-group mt-3" align="center">
+                        <button type="submit" name="login" class="btn btn-primary mb-2">Login</button>
                         <br>
-                        Belum punya akun? <a href="register.php">Register</a>
+                        Belum punya akun? <a href="register.php">Registrasi</a>
                     </div>
                 </form>
             </div>
