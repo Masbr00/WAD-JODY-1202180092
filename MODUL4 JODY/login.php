@@ -23,7 +23,20 @@ if (isset($_POST['login'])) {
     }
 
     if ($database->login($email,$password,$remember)) {
-        header('location:index.php');
+        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">';
+        echo '<strong>Login Berhasil!</strong>';
+        echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+        echo '<span aria-hidden="true">&times;</span>';
+        echo '</button>';
+        echo '</div>';
+        header("Refresh:3; url=index.php");
+    }else{
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+        echo '<strong>Login Gagal!</strong>';
+        echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+        echo '<span aria-hidden="true">&times;</span>';
+        echo '</button>';
+        echo '</div>';
     }
 }
 ?>
@@ -68,7 +81,6 @@ if (isset($_POST['login'])) {
         </div>
     </nav>
     <!-- end Navbar -->
-
     <!-- content -->
     <div class="container my-3">
         <div class="card centered mx-auto px-3" style="width: 26rem;">
