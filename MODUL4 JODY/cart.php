@@ -86,6 +86,7 @@ $select = mysqli_query($conn, $query);
 
                     echo '<td>'; 
                     echo 'Rp ' . number_format($selects['harga'], 0, ",", ",");
+                    $totalharga = $totalharga + $selects['harga'];
                     echo '</td>';
                             // 
                     echo '<td>'; ?> <!-- POTONG DISINI -->
@@ -96,6 +97,26 @@ $select = mysqli_query($conn, $query);
                     echo '</tr>';
                     echo '</tbody>';
                 }
+                    echo '<tbody>';
+                    echo '<tr>';
+
+                    echo '<th scope="row">';
+                    echo 'Total';
+                    echo '</th>';
+
+                    echo '<td>';
+                    echo '';
+                    echo '</td>';
+
+                    echo '<td>';
+                    echo '<b>';
+                    echo 'Rp ' . number_format($totalharga, 0, ",", ",");
+                    echo '</b>';
+                    echo '</td>';
+
+                    echo '<td>';
+                    echo '';
+                    echo '</td>';
             ?>
         </table>
         <!-- Footer -->

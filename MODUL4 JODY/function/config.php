@@ -3,14 +3,14 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "modul4_jody";
+$dbname = "wad_modul4";
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 class database{
     var $host = "localhost";
     var $user = "root";
     var $pass = "";
-    var $name = "modul4_jody";
+    var $name = "wad_modul4";
     var $koneksi;
 
     function __construct(){

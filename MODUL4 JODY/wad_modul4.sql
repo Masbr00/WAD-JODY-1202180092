@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2020 at 04:20 PM
+-- Generation Time: Nov 22, 2020 at 05:59 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `modul4_jody`
+-- Database: `wad_modul4`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +33,18 @@ CREATE TABLE `cart` (
   `nama_barang` varchar(255) NOT NULL,
   `harga` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `nama_barang`, `harga`) VALUES
+(20, 15, 'Miracle Toner', 108000),
+(21, 15, 'Snail Truecica', 180000),
+(22, 15, 'Yuja Niacin', 169000),
+(23, 15, 'Miracle Toner', 108000),
+(24, 15, 'Snail Truecica', 180000),
+(25, 15, 'Yuja Niacin', 169000);
 
 -- --------------------------------------------------------
 
@@ -53,7 +65,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `no_hp`, `password`) VALUES
-(15, 'Jody Mardika', 'creepyzodiak@gmail.com', 12345, '$2y$10$3OC44qUJzqngoZ4/bI0FTetNZQekiA180hP/1bf9Vz/aBoXaLvk1q');
+(15, 'Jody Mardika', 'creepyzodiak@gmail.com', 12345, '$2y$10$3OC44qUJzqngoZ4/bI0FTetNZQekiA180hP/1bf9Vz/aBoXaLvk1q'),
+(17, 'qwerty', 'kundangmalin721@yahoo.com', 1234, '$2y$10$1UiID5tqTro07ZAhacW/GeiHCC9VlWNTo5iJV4hl9xJxQY.PrrSYe');
 
 --
 -- Indexes for dumped tables
@@ -81,13 +94,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
