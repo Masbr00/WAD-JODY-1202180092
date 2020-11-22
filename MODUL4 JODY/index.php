@@ -110,16 +110,6 @@ if(isset($_POST['item3'])){
         </div>
     </nav>
     <!-- end Navbar -->
-    <?php
-        if(isset($_SESSION['is_login'])){
-            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
-            echo '<strong>HALOOO</strong> Selamat Datang di halaman web kami';
-            echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
-            echo '<span aria-hidden="true">&times;</span>';
-            echo '</button>';
-            echo '</div>';
-        }
-    ?>
     <!-- content -->
     <div class="container my-5">
         <div class="card mx-auto border-0" style="width:65%">
