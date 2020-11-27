@@ -32,7 +32,7 @@ class database{
             }
             $_SESSION['email'] = $email;
             $_SESSION['nama'] = $data_user['nama'];
-            $_SESSION['Is_login'] = TRUE;
+            $_SESSION['is_login'] = TRUE;
             return TRUE;
         }
     }
