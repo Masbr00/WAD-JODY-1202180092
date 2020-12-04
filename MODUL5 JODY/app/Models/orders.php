@@ -10,4 +10,9 @@ class orders extends Model
     protected $fillable = [
         'amount', 'buyer_name', 'buyer_contact'
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Products::class);
+    }
 }
