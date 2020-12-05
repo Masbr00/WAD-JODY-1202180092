@@ -33,7 +33,7 @@
     <div class="container">
         <table class="table">
             @forelse($products as $vk)
-            <a href=# type="submit" class="btn btn-dark mb-3">Add Product</a>
+            <a href="insert_product" type="submit" class="btn btn-dark mb-3">Add Product</a>
             @empty
             @endforelse
             <thead class="thead-dark">
@@ -60,7 +60,7 @@
                     <td colspan="4" style="text-align:center;"><b><i>There is No Data</i></b></td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="text-align:center;"> <a href=# type="submit" class="btn btn-dark mx-auto">Add Product</a> </td>
+                    <td colspan="4" style="text-align:center;"> <a href="insert_product" type="submit" class="btn btn-dark mx-auto">Add Product</a> </td>
                 </tr>
                 @endforelse
             </tbody>

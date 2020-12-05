@@ -26,9 +26,14 @@ Route::get('/home', function () {
 // });
 Route::get('/product', 'App\Http\Controllers\ProductController@index');
 
+Route::get('/insert_product', function () {
+    return view('insert_product');
+});
+
 Route::get('/history', function () {
     return view('home');
 });
+
 Route::get('/order', function () {
     return view('home');
 });

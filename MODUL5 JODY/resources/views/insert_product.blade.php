@@ -31,7 +31,41 @@
     <!-- end of navbar -->
     <!-- content -->
     <div class="container">
-        <img src="{{ ('assets/sepatu.png') }}" style="height:300px;with:auto;margin-top:100px">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Price</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                        $ USD
+                        </div>
+                    </div>
+                    <input type="number" class="form-control" name="price">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Description</label>
+                <textarea class="form-control" rows="5" name="description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Stock</label>
+                <input type="number" class="form-control" name="stock" style="width:30%">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Image File Input</label>
+                <input type="file" class="form-control-file" name="image">
+            </div>
+
+            <a href=# type="submit" class="btn btn-dark">Submit</a>
+        </form>
     </div>
     <!-- end of content -->
 
