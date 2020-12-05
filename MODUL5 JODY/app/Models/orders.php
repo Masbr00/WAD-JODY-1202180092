@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class orders extends Model
 {
-    // protected $fillable = [
-    //     'amount', 'buyer_name', 'buyer_contact'
-    // ];
-
     public function products()
     {
         return $this->hasMany(Products::class);
     }
+
+    protected $fillable = [
+        'amount', 'buyer_name', 'buyer_contact'
+    ];
+
+    protected $table = "orders";
 }

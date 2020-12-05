@@ -27,7 +27,7 @@
                         <b><a class="nav-link" href="product">PRODUCT</a></b>
                     </li>
                     <li class="nav-item mr-4">
-                        <b><a class="nav-link" href="#">ORDER</a></b>
+                        <b><a class="nav-link" href="order">ORDER</a></b>
                     </li>
                     <li class="nav-item mr-4">
                         <b><a class="nav-link" href="#">HISTORY</a></b>

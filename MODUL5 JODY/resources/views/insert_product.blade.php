@@ -4,7 +4,7 @@
 <!-- content -->
 <div class="container">
     <h1 class="my-5" style="text-align:center">Input Product</h1>
-    <form method="get" action="product/create">
+    <form method="get" action="product/create" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="exampleInputEmail1">Product Name</label>

@@ -39,8 +39,6 @@ Route::get('/history', function () {
     return view('home');
 });
 
-Route::get('/order', function () {
-    return view('home');
-});
+Route::get('/order', 'App\Http\Controllers\ProductController@index2');
 
 

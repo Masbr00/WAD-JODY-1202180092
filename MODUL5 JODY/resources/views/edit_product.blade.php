@@ -4,7 +4,7 @@
 <!-- content -->
 <div class="container">
     <h1 class="my-5" style="text-align:center">Update Product</h1>
-    <form method="post" action="product/updates/{{ $product->id }}">
+    <form method="post" action="product/updates/{{ $product->id }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
         <div class="form-group">

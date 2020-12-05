@@ -12,6 +12,11 @@ class ProductController extends Controller
         return view('product', ['products' => $products]);
     }
 
+    public function index2(){
+        $products = Product::all();
+        return view('order', ['products' => $products]);
+    }
+
     public function create(Request $request){
         $this->validate($request,[
             'name' => 'required',
@@ -20,13 +25,13 @@ class ProductController extends Controller
             'stock' => 'required',
             'img_path' => 'required'
         ]);
-        
+
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
             'stock' => $request->stock,
-            'img_path' => $request->image
+            'img_path' => $request->img_path
         ]);
         return redirect('/product');
     }
