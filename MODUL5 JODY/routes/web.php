@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,16 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+// Route::get('/product', function () {
+//     return view('product');
+// });
+Route::get('/product', 'App\Http\Controllers\ProductController@index');
+
+Route::get('/history', function () {
+    return view('home');
+});
+Route::get('/order', function () {
+    return view('home');
+});
+
+

@@ -6,14 +6,7 @@
     <script type="text/javascript" src="{{ ('assets/js/bootstrap.js') }}"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Sweet Home</title>
-    <style>
-        img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        }
-    </style>
+    <title>Insert Product</title>
 </head>
 <body class="bg-light">
     <!-- navbar -->
