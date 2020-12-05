@@ -1,41 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="{{ ('assets/css/bootstrap.css') }}">
-    <script type="text/javascript" src="{{ ('assets/js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ ('assets/js/bootstrap.js') }}"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-</head>
-<body class ="bg-light">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active mr-4">
-                    <b><a class="nav-link" href="home">HOME <span class="sr-only">(current)</span></a></b>
-                </li>
-                <li class="nav-item mr-4">
-                    <b><a class="nav-link" href="#">PRODUCT</a></b>
-                </li>
-                <li class="nav-item mr-4">
-                    <b><a class="nav-link" href="order">ORDER</a></b>
-                </li>
-                <li class="nav-item mr-4">
-                    <b><a class="nav-link" href="history">HISTORY</a></b>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- end of navbar -->
-    <!-- Content -->
+@extends('layout')
+@section('title', 'Product')
+@section('content')
     <div class="container">
+        <h1 class="my-5" style="text-align:center">List Product</h1>
         <table class="table">
-            @forelse($products as $vk)
             <a href="insert_product" type="submit" class="btn btn-dark mb-3">Add Product</a>
-            @empty
-            @endforelse
             <thead class="thead-dark">
                 <tr>
                     <th>#</th>
@@ -51,8 +20,8 @@
                     <td>{{ $vk->name }}</td>
                     <td>{{ $vk->price }}</td>
                     <td>
-                        <a href=# type="submit" class="btn btn-primary">Edit</a>
-                        <a href=# type="submit" class="btn btn-danger">Delete</a>
+                        <a href="/product/update/{{ $vk->id }}" type="submit" class="btn btn-primary">Edit</a>
+                        <a href="/product/delete/{{ $vk->id }}" type="submit" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @empty
@@ -67,5 +36,4 @@
         </table>
     </div>
     <!-- content -->
-</body>
-</html>
+@endsection

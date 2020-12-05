@@ -1,14 +1,15 @@
 @extends('layout')
-@section('title', 'Insert Product')
+@section('title', 'Update Product')
 @section('content')
 <!-- content -->
 <div class="container">
-    <h1 class="my-5" style="text-align:center">Input Product</h1>
-    <form method="get" action="product/create">
+    <h1 class="my-5" style="text-align:center">Update Product</h1>
+    <form method="post" action="product/updates/{{ $product->id }}">
         {{ csrf_field() }}
+        {{ method_field('PUT') }}
         <div class="form-group">
             <label for="exampleInputEmail1">Product Name</label>
-            <input type="text" class="form-control" name="name">
+            <input type="text" class="form-control" name="name" value="{{ $product->name }}">
             @if($errors->has('name'))
                 <div class="text-danger">
                     {{ $errors->first('name')}}
@@ -24,7 +25,7 @@
                         $ USD
                     </div>
                 </div>
-                <input type="number" class="form-control" name="price">
+                <input type="number" class="form-control" name="price" value="{{ $product->price }}">
             </div>
             @if($errors->has('price'))
                 <div class="text-danger">
@@ -35,7 +36,7 @@
 
         <div class="form-group">
             <label for="exampleInputEmail1">Description</label>
-            <textarea class="form-control" rows="5" name="description"></textarea>
+            <textarea class="form-control" rows="5" name="description" value="{{ $product->description }}"></textarea>
             @if($errors->has('description'))
                 <div class="text-danger">
                     {{ $errors->first('description')}}
@@ -45,7 +46,7 @@
 
         <div class="form-group">
             <label for="exampleInputEmail1">Stock</label>
-            <input type="number" class="form-control" name="stock" style="width:30%">
+            <input type="number" class="form-control" name="stock" style="width:30%" value="{{ $product->stock }}">
             @if($errors->has('stock'))
                 <div class="text-danger">
                     {{ $errors->first('stock')}}

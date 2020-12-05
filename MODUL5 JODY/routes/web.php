@@ -15,17 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Route::get('/home', function () {
     return view('home');
 });
-// Route::get('/product', function () {
-//     return view('product');
-// });
-Route::get('/product', 'App\Http\Controllers\ProductController@index');
 
+Route::get('/product', 'App\Http\Controllers\ProductController@index');
+Route::get('/product/create', 'App\Http\Controllers\ProductController@create');
+Route::get('/product/delete/{id}', 'App\Http\Controllers\ProductController@delete');
+Route::get('/product/update/{id}', 'App\Http\Controllers\ProductController@update'); //cari id product
+Route::put('/product/update/product/updates/{id}', 'App\Http\Controllers\ProductController@updates'); //update product
+
+Route::get('/create_product', function () {
+    return view('insert_product');
+});
 Route::get('/insert_product', function () {
     return view('insert_product');
 });
