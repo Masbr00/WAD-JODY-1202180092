@@ -17,6 +17,11 @@ class ProductController extends Controller
         return view('order', ['products' => $products]);
     }
 
+    public function detail_order($id){
+        $product = Product::find($id);
+        return view('detail_order', ["product" => $product]);
+    }
+
     public function create(Request $request){
         $this->validate($request,[
             'name' => 'required',

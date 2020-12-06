@@ -8,11 +8,11 @@
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top bg-dark" src="..." style="width:286px;height:180px">
-                    <div class="card-body">
+                    <div class="card-body bg-white">
                         <h5 class="card-title">{{ $vk->name }}</h5>
                         <p class="card-text">{{ $vk->description }}</p>
                         <p class="card-text" style="font-size:24px">${{ $vk->price }},00</p>
-                        <a href="#" class="btn btn-success">Order Now</a>
+                        <a href="detail_order/{{ $vk->id }}" class="btn btn-success">Order Now</a>
                     </div>
                 </div>
             </div>

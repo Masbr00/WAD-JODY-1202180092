@@ -35,10 +35,9 @@ Route::get('/insert_product', function () {
     return view('insert_product');
 });
 
-Route::get('/history', function () {
-    return view('home');
-});
-
 Route::get('/order', 'App\Http\Controllers\ProductController@index2');
+Route::get('/detail_order/{id}', 'App\Http\Controllers\ProductController@detail_order');
+Route::get('/detail_order/order/create', 'App\Http\Controllers\OrderController@create');
+Route::get('/history', 'App\Http\Controllers\OrderController@index');
 
 
