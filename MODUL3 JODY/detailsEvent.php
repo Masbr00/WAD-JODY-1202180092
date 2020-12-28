@@ -91,7 +91,7 @@
                     </p>
                     <div align="center">
                         <div class="form-check-inline">
-                            <button type="button" class="btn btn-primary btn-md mr-3 px-5" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                            <a href="updateEvent.php?name=<?php echo $selects['name']; ?>" class="btn btn-primary btn-md px-5 mr-3">Edit</a>
                             <a href="delete.php?name=<?php echo $selects['name']; ?>" class="btn btn-danger btn-md px-5">Delete</a>
                         <div>
                     </div>
