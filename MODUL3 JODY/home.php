@@ -69,9 +69,7 @@
                                 </h5>
                                 <hr>
                                 <div align="right">
-                                    <form action="detailsEvent.php" method="post">
-                                        <button type="submit" class="btn btn-primary px-4" name="submit">Detail</button>
-                                    </form>
+                                    <a href="detailsEvent.php?name=<?php echo $selects['name']; ?>" class="btn btn-primary px-4">Detail</a>
                                 </div>
                             </div>
                         </div>

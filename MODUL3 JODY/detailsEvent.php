@@ -13,7 +13,7 @@
     <!-- koneksi database -->
     <?php
         include ('config.php');
-        $query = "SELECT * FROM event_table";
+        $query = "SELECT * FROM event_table WHERE name='" . $_GET['name'] . "' ";
         $select = mysqli_query($conn, $query);
     ?>
     <!-- end of koneksi database -->
